@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,6 +43,16 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAqptxUOVU6sIJBcXWsnmGn4u9_jjGrCNo',
+    appId: '1:1050344469051:web:660ef64fdfb9de6f26a21e',
+    messagingSenderId: '1050344469051',
+    projectId: 'flutter-test-bug',
+    authDomain: 'flutter-test-bug.firebaseapp.com',
+    storageBucket: 'flutter-test-bug.appspot.com',
+    measurementId: 'G-831E34RK8L',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDY28U3sjA_QpBX1p9khTrIwIu9R6Jabag',
     appId: '1:1050344469051:android:75a9bbbda2eb617926a21e',
@@ -64,5 +68,14 @@ class DefaultFirebaseOptions {
     projectId: 'flutter-test-bug',
     storageBucket: 'flutter-test-bug.appspot.com',
     iosBundleId: 'com.example.firebaseAnalyHehe',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyC7r2XTfi4PAnekOdjG-LvKU8ylcW5F7wE',
+    appId: '1:1050344469051:ios:acdb37a61e69fac226a21e',
+    messagingSenderId: '1050344469051',
+    projectId: 'flutter-test-bug',
+    storageBucket: 'flutter-test-bug.appspot.com',
+    iosBundleId: 'com.example.firebaseAnalyHehe.RunnerTests',
   );
 }
