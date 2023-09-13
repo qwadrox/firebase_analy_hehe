@@ -7,7 +7,8 @@
         {
             "name": "firebase_analy_hehe",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "flutterMode": "release"
         },
         {
             "name": "firebase_analy_hehe (profile mode)",
